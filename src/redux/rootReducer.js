@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
-import moviesReducer from '../containers/Movies';
+import { connectRouter } from 'connected-react-router';
 
-const rootReducer = combineReducers({ Movies: moviesReducer });
+import searchReducer from '../containers/SearchSection/redux/reducer';
 
-export default rootReducer;
+const createRootReducer = (history) =>
+  combineReducers({ router: connectRouter(history), Search: searchReducer });
+
+export default createRootReducer;
