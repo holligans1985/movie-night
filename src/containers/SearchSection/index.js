@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Divider, Row, Col } from 'antd';
 import actionTypes from './redux/constants';
-// import searchActions from './redux/actions';
-// import PropTypes from 'prop-types';
+import SearchWrapper from './styles';
 import SearchBar from '../../Components/SearchBar';
 import MovieResultCard from '../../Components/MovieResultCard';
 
 const SearchSection = () => {
-  // Hooks
   const movieSearchResult = useSelector((state) => state.Search.movieSearchResult);
   const loading = useSelector((state) => state.Search.loading);
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const SearchSection = () => {
   const handleOnSearch = (query) => dispatch({ type: actionTypes.searchMovies, payload: query });
 
   return (
-    <div>
+    <SearchWrapper>
       <SearchBar
         placeholder="Search a movie"
         allowClear
@@ -23,16 +22,24 @@ const SearchSection = () => {
         loading={loading}
         enterButton
       />
+      <Divider orientation="center">Seach Results</Divider>
       {movieSearchResult && (
-        <div style={{ maxWidth: '90%', margin: '0 auto' }}>
-          {movieSearchResult.map((movie) => (
-            <MovieResultCard movie={movie} key={movie.id} />
-          ))}
-        </div>
+        <Row gutter={[24, 32]}>
+          {movieSearchResult.map((movie) => {
+            if (movie.poster_path || movie.backdrop_path) {
+              return (
+                <Col xs={24} sm={12} md={8} lg={6} key={movie.id}>
+                  <MovieResultCard movie={movie} />
+                </Col>
+              );
+            }
+            return null;
+          })}
+        </Row>
       )}
 
       {!movieSearchResult && <p>No results</p>}
-    </div>
+    </SearchWrapper>
   );
 };
 
