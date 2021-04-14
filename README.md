@@ -1,6 +1,6 @@
-## This is a sample project name movie-night build with React, Redux, Antd and Styled-components.
+## This is a sample project built with React, Redux, Antd and Styled-components.
 
-## The demo url is: [here](https://youthful-northcutt-32a0e8.netlify.app/).
+## The demo is hosted [here](https://youthful-northcutt-32a0e8.netlify.app/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
