@@ -25,6 +25,4 @@ function MovieDetails() {
   return <Redirect to="/" />;
 }
 
-MovieDetails.propTypes = {};
-
 export default MovieDetails;

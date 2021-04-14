@@ -9,7 +9,11 @@ const StyledCard = styled(Card)`
     text-align: center;
   }
   .ant-card-cover {
-    max-height: 500px;
+    height: 400px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
   .ant-card-body {
     padding: 0;
@@ -19,6 +23,21 @@ const StyledCard = styled(Card)`
     border-top: none;
     font-size: 1.5em;
     font-weight: 100;
+  }
+  @media (max-width: 1200px) {
+    .ant-card-head-title {
+      font-size: 1.2em;
+    }
+    .ant-card-cover {
+      height: 300px;
+    }
+  }
+  @media (max-width: 575px) {
+    width: 300px;
+    margin: 0 auto;
+    .ant-card-cover {
+      height: 400px;
+    }
   }
 `;
 
