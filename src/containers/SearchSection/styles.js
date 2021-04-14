@@ -8,11 +8,11 @@ const SearchWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 992px) {
+    width: 85%;
+  }
   @media (max-width: 768px) {
     width: 80%;
-  }
-  @media (max-width: 520px) {
-    width: 90%auto;
   }
 `;
 

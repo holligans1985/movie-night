@@ -29,6 +29,22 @@ const StyledDetailCard = styled.section`
       line-height: 1.1;
     }
   }
+  @media (max-width: 992px) {
+    .poster-wrapper {
+      width: 40%;
+    }
+    .copy-wrapper {
+      width: 60%;
+      padding: 10px;
+
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+    }
+  }
 `;
 
 export default StyledDetailCard;

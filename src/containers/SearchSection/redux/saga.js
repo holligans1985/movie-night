@@ -10,7 +10,7 @@ function* searchMovieSaga({ payload }) {
   } catch (error) {
     yield put({
       type: actionNames.searchMoviesError,
-      payload: { error, errorMsg: 'An error happened when searching movie' },
+      payload: { errorMsg: 'An error happened when searching movie' },
     });
   }
 }
